@@ -41,22 +41,42 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
    const pOne = document.createElement('p');
    const pTwo = document.createElement('p');
    const pThree = document.createElement('p');
-   const expandButton = document.createElement('span');
+   const button = document.createElement('span');
 
-   article.appendChild(articleTitle, articleDate, pOne, pTwo, pThree, expandButton);
+   article.appendChild(articleTitle);
+   article.appendChild(articleTitle);
+   article.appendChild(articleDate);
+   article.appendChild(pOne);
+   article.appendChild(pTwo);
+   article.appendChild(pThree);
+   article.appendChild(button);
 
    article.classList.add('article');
    articleDate.classList.add('date');
-   expandButton.classList.add('expandButton');
+   button.classList.add('expandButton');
 
    articleTitle.textContent = title;
    articleDate.textContent = date;
    pOne.textContent = firstParagraph;
    pTwo.textContent = secondParagraph;
    pThree.textContent = thirdParagraph;
-
-   expandButton.addEventListener('click', function(){
+   button.textContent = '+';
+   button.addEventListener('click', function(){
    article.classList.toggle('article-open');
  })
 return article
 }
+
+//const newArticle = articleMaker({title: 'Sup', date: 'September 29th, 2021', firstParagraph: 'TEST TEST TEST', secondParagraph: 'TEST 2 TEST 2 TEST 2', thirdParagraph: "Test 3 TESt 23wfsds"});
+const articles = document.querySelector('.articles');
+//articles.appendChild(newArticle);
+
+
+const articleElements = data.map(elem => articleMaker(elem));
+//const panelElements = panelData.map(elem => makePanel(elem));
+articleElements.forEach(elemToAdd => {
+  articles.appendChild(elemToAdd);
+})
+//panelElements.forEach(elemToAdd => {
+  //accordion.appendChild(elemToAdd);
+//})
