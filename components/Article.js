@@ -73,10 +73,7 @@ const articles = document.querySelector('.articles');
 
 
 const articleElements = data.map(elem => articleMaker(elem));
-//const panelElements = panelData.map(elem => makePanel(elem));
+
 articleElements.forEach(elemToAdd => {
   articles.appendChild(elemToAdd);
 })
-//panelElements.forEach(elemToAdd => {
-  //accordion.appendChild(elemToAdd);
-//})
