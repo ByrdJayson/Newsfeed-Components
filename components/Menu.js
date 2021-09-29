@@ -59,8 +59,8 @@ function menuMaker(array) {
 
   menu.appendChild(list);
 
-    menuItems.forEach((item) => {
-    let element = document.createElement('li');
+    array.forEach((item) => {
+    const element = document.createElement('li');
     element.textContent = item;
     console.log(element.textContent);
     list.appendChild(element);
