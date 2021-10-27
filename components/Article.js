@@ -120,7 +120,7 @@ function articleMaker(obj){
   expandButton.textContent = '+';
 
   expandButton.addEventListener('click', function(){
-    article.classList.add('article-open')
+    article.classList.toggle('article-open')
   })
 
 
